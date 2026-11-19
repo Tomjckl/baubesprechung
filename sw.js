@@ -1,4 +1,4 @@
-const CACHE = 'bb-v3';
+const CACHE = 'bb-v4';
 const FILES = ['/baubesprechung/', '/baubesprechung/index.html', '/baubesprechung/manifest.json', '/baubesprechung/icon-192.png', '/baubesprechung/icon-512.png'];
 
 self.addEventListener('install', e => {

@@ -1,5 +1,5 @@
-const CACHE = 'bb-v2';
-const FILES = ['/', '/index.html', '/manifest.json', '/icon-192.png', '/icon-512.png'];
+const CACHE = 'bb-v3';
+const FILES = ['/baubesprechung/', '/baubesprechung/index.html', '/baubesprechung/manifest.json', '/baubesprechung/icon-192.png', '/baubesprechung/icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
@@ -15,6 +15,6 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match('/index.html')))
+    caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match('/baubesprechung/index.html')))
   );
 });

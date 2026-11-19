@@ -1,4 +1,4 @@
-const CACHE = 'bb-v4';
+const CACHE = 'bb-v5';
 const FILES = ['/baubesprechung/', '/baubesprechung/index.html', '/baubesprechung/manifest.json', '/baubesprechung/icon-192.png', '/baubesprechung/icon-512.png'];
 
 self.addEventListener('install', e => {
@@ -15,6 +15,6 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match('/baubesprechung/index.html')))
+    caches.match(e.request).then(r => r || fetch(e.request))
   );
 });
